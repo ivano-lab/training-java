@@ -7,9 +7,9 @@ public class Pessoa {
 
     public void imprime() {
         System.out.println("---------------------");
-        System.out.println(this.nome);
-        System.out.println(this.idade);
-        System.out.println(this.sexo);
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Idade: " + this.idade);
+        System.out.println("Sexo: " + this.sexo);
     }
 
     public void setNome(String nome){

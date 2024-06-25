@@ -5,11 +5,7 @@ import academy.devdojo.maratonajava.classes.dominio.Seriado;
 public class netflix {
     public static void main(String[] args) {
         Seriado seriado = new Seriado("One Piece");
-        System.out.println(seriado.getEpisodios());
-
-        for (int episodio : seriado.getEpisodios()) {
-            System.out.println(episodio + " ");
-        }
-
+        Seriado seriado2 = new Seriado("Star Trek");
+        Seriado seriado3 = new Seriado("Stranger Things");
     }
 }

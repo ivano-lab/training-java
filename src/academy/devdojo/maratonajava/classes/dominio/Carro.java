@@ -4,7 +4,7 @@ public class Carro {
 
     private String nome;
     private double velMax;
-    public static double velLim = 250;
+    private static double velLim = 250;
 
     public Carro(String nome, double velMax) {
         this.nome = nome;
@@ -17,6 +17,14 @@ public class Carro {
         System.out.println("Velocidade Máxima: " + this.velMax);
         System.out.println("Velocidade Limite: " + Carro.velLim);
 
+    }
+
+    public static void setVelLim(double velLim){
+        Carro.velLim = velLim;
+    }
+
+    public static double getVelLim() {
+        return Carro.velLim;
     }
 
     public String getNome() {
