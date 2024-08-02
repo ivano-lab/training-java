@@ -4,18 +4,11 @@ import academy.devdojo.maratonajava.colecoes.dominio.Manga;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-class MangaByIdCamparator implements Comparator<Manga> {
-    @Override
-    public int compare(Manga manga1, Manga manga2) {
-        return manga1.getId().compareTo(manga2.getId());
-    }
-}
-
-public class MangaSortTeste01 {
+public class BinarySearchTeste02 {
     public static void main(String[] args) {
+        MangaByIdCamparator mangaByIdCamparator = new MangaByIdCamparator();
         List<Manga> mangas = new ArrayList(6);
         mangas.add(new Manga(5L, "Yu Yu Hakusho", 19.99));
         mangas.add(new Manga(6L, "Naruto", 24.99));
@@ -23,20 +16,17 @@ public class MangaSortTeste01 {
         mangas.add(new Manga(4L, "Attack on Titan", 22.99));
         mangas.add(new Manga(3L, "Fullmetal Alchemist", 18.99));
         mangas.add(new Manga(2L, "Death Note", 21.99));
-        for (Manga manga : mangas) {
-            System.out.println(manga);
-        }
-        System.out.println("-----------------");
-        Collections.sort(mangas);
+
+        //Collections.sort(mangas);
+
+        mangas.sort(mangaByIdCamparator);
         for (Manga manga : mangas) {
             System.out.println(manga);
         }
 
-        System.out.println("-----------------");
-        //Collections.sort(mangas, new MangaByIdCamparator());
-        mangas.sort((new MangaByIdCamparator()));
-        for (Manga manga : mangas) {
-            System.out.println(manga);
-        }
+        Manga mangaToSearch = new Manga(3L, "Fullmetal Alchemist", 18.99);
+
+        System.out.println(Collections.binarySearch(mangas, mangaToSearch, mangaByIdCamparator));
+
     }
 }
