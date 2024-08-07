@@ -1,21 +1,28 @@
 package academy.devdojo.maratonajava.generics.teste;
 
-import academy.devdojo.maratonajava.generics.dominio.Barco;
-import academy.devdojo.maratonajava.generics.dominio.Carro;
-import academy.devdojo.maratonajava.service.CarroRentavelService;
-import academy.devdojo.maratonajava.service.BarcoRentavelService;
+import academy.devdojo.maratonajava.colecoes.dominio.Consumidor;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClasseGenericaTeste01 {
     public static void main(String[] args) {
-        CarroRentavelService carroRentavelService = new CarroRentavelService();
-        Carro carro = carroRentavelService.buscandoCarroDisponivel();
-        System.out.println("Usando o carro por um mês...");
-        carroRentavelService.retornandoCarroAlugado(carro);
-        System.out.println("----------------------------");
-        BarcoRentavelService barcoRentavelService = new BarcoRentavelService();
-        Barco barco = barcoRentavelService.buscandoBarcoDisponivel();
-        System.out.println("Usando o barco por um mês...");
-        barcoRentavelService.retornandoBarcoAlugado(barco);
+        List<String> lista = new ArrayList();
+        lista.add("Wolverine");
+        lista.add("123L");
+        lista.add("Deadpool");
+
+        for (String str : lista) {
+            System.out.println(str);
+        }
+        add(lista, new Consumidor("Bloodsport"));
+
+        for (Object o : lista) {
+            System.out.println(o);
+        }
+    }
+
+    private static void add(List lista, Consumidor consumidor) {
+        lista.add(consumidor);
     }
 }

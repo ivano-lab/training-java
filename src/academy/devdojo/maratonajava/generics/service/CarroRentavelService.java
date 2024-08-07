@@ -1,4 +1,4 @@
-package academy.devdojo.maratonajava.service;
+package academy.devdojo.maratonajava.generics.service;
 
 import academy.devdojo.maratonajava.generics.dominio.Carro;
 
