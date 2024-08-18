@@ -8,9 +8,9 @@ import java.util.function.Function;
 public class LambdaTeste02 {
     public static void main(String[] args) {
         List<String> strings = List.of("Batman", "Superman", "Flash", "Mulher-Maravilha", "Lanterna Verde");
-        List<Integer> integers = map(strings, (String s) -> s.length());
-        System.out.println(integers);
-        List<String> map = map(strings, s -> s.toUpperCase());
+        List<Integer> integers = map(strings, String::length);
+        //System.out.println(integers);
+        List<String> map = map(strings, String::toUpperCase);
         System.out.println(map);
     }
 
